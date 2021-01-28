@@ -39,6 +39,11 @@ public class TemperatureRepo {
 		return Collections.unmodifiableList(temperatures);
 	}
 	
+	public Temperature save(Temperature temperature) {
+		temperatures.add(temperature);
+		return temperature;
+	}
+	
 	public List<Temperature> filterLogin(String sensorLogin) {
 		Optional<Sensor> sensor = sensors.get(sensorLogin);
 		
